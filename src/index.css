@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #100d0a;
+  --foreground: #fffdf8;
+  --card: #342a23;
+  --primary: #d9a588;
+  --primary-foreground: #23180f;
+  --accent: #ab826b;
+  --popover: #30261f;
+  --muted: #3c3027;
+  --muted-foreground: #d6c8bc;
+  --border: #ffffff35;
+  --ring: #f1c9a6;
+  --page-padding: 28px;
+  --ease-serra: cubic-bezier(.22, 1, .36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide default cursor on fine-pointer devices when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Ensure focus states remain visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 3px !important;
+}
+
+/* Readability Gradient */
+.readability-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 7, 5, 0.4) 0%,
+    transparent 23%,
+    transparent 45%,
+    rgba(12, 8, 5, 0.24) 66%,
+    rgba(12, 8, 5, 0.76) 100%
+  );
+}
+
+/* Glass Card Tint */
+.card-tint {
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)), rgba(33, 23, 14, 0.4);
+}
+
+/* Menu dialog background */
+.menu-gradient {
+  background: radial-gradient(ellipse at 0% 100%, #594133 0%, transparent 65%), #251e19;
+}
